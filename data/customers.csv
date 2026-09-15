@@ -1,0 +1,71 @@
+CustomerID,CustomerName,Region,Industry,CreditLimit,PaymentTermsDays,AccountManager,CustomerSince
+C001,Netherthorpe Retail Limited,South West,Retail,94000,30,Tom Beckett,2018-03-11
+C002,Whinbridge Healthcare Ltd,Yorkshire,Healthcare,83500,30,Helen Marsh,2018-03-15
+C003,Heshurst Retail Ltd,South West,Retail,19500,60,Aisha Rahman,2018-04-12
+C004,Brackstead Medical Supplies Limited,North East,Healthcare,67000,30,Tom Beckett,2018-06-01
+C005,Whincombe Bakeries Limited,South East,Food & Drink,24000,60,Aisha Rahman,2018-06-28
+C006,Rookthorpe Contractors Limited,London,Construction,9000,45,Tom Beckett,2018-09-09
+C007,Halbrook Construction Ltd,East of England,Construction,43000,60,Gareth Lloyd,2018-10-27
+C008,Yarmoor Trading Ltd,North East,Retail,76000,30,Helen Marsh,2018-11-18
+C009,Thornmere Freight Services Limited,North East,Distribution,43500,30,Fiona Kerr,2018-12-07
+C010,Kelstead Supplies Ltd,North East,Distribution,155500,30,Fiona Kerr,2019-02-08
+C011,Nethercombe Foods Ltd,East of England,Food & Drink,159000,30,Fiona Kerr,2019-03-11
+C012,Woldbrook Packaging Limited,East of England,Manufacturing,45500,30,Fiona Kerr,2019-03-18
+C013,Netherford Associates Ltd,Midlands,Professional Services,164500,30,Gareth Lloyd,2019-03-19
+C014,Langfield Foods Ltd,Scotland,Food & Drink,65500,30,Aisha Rahman,2019-05-08
+C015,Netherholme Contractors Ltd,South East,Construction,175500,60,Tom Beckett,2019-07-28
+C016,Pencombe Distribution Ltd,Midlands,Distribution,50500,30,Helen Marsh,2019-10-27
+C017,Brinholme Metalworks Limited,London,Manufacturing,54000,60,Tom Beckett,2019-11-05
+C018,Whinmoor Healthcare Ltd,Scotland,Healthcare,50500,30,Aisha Rahman,2019-11-16
+C019,Dunstead Engineering Ltd,Wales,Manufacturing,93500,30,Gareth Lloyd,2020-01-02
+C020,Morleigh Care Homes Ltd,London,Healthcare,101500,30,Aisha Rahman,2020-01-07
+C021,Netherbridge Wholesale Limited,North West,Distribution,80000,30,Fiona Kerr,2020-06-16
+C022,Garwick Civils Limited,Scotland,Construction,107500,30,Helen Marsh,2020-07-08
+C023,Bringate Freight Services Limited,South East,Distribution,62000,30,Gareth Lloyd,2020-07-20
+C024,Halmere Metalworks Ltd,Midlands,Manufacturing,47500,60,Tom Beckett,2020-08-10
+C025,Brackhurst Fresh Produce Limited,East of England,Food & Drink,69500,30,Fiona Kerr,2020-09-02
+C026,Linleigh Packaging Limited,London,Manufacturing,10500,30,Gareth Lloyd,2021-01-25
+C027,Kelworth Building Services Limited,South East,Construction,187000,30,Aisha Rahman,2021-03-24
+C028,Penbrook Foods Ltd,South East,Food & Drink,41500,30,Fiona Kerr,2021-07-04
+C029,Garcombe Freight Services Ltd,East of England,Distribution,104500,45,Fiona Kerr,2021-07-11
+C030,Garford Logistics Ltd,North West,Distribution,196000,45,Gareth Lloyd,2021-10-11
+C031,Calderthorpe Healthcare Ltd,South West,Healthcare,184000,30,Fiona Kerr,2021-10-12
+C032,Yarleigh Advisory Ltd,London,Professional Services,75500,30,Helen Marsh,2021-10-18
+C033,Mormere Packaging Ltd,East of England,Manufacturing,19500,30,Fiona Kerr,2021-11-30
+C034,Calderleigh Garden Centres Limited,Midlands,Retail,21000,30,Helen Marsh,2021-12-24
+C035,Lincombe Groundworks Ltd,London,Construction,52000,30,Tom Beckett,2022-02-13
+C036,Whinworth Fresh Produce Ltd,London,Food & Drink,56000,30,Aisha Rahman,2022-03-07
+C037,Brincombe Retail Ltd,London,Retail,133000,30,Helen Marsh,2022-03-27
+C038,Yarcombe Surveyors Limited,Scotland,Professional Services,78000,30,Fiona Kerr,2022-05-10
+C039,Dunhurst Retail Limited,Midlands,Retail,9000,30,Gareth Lloyd,2022-05-12
+C040,Brinstead Groundworks Limited,North West,Construction,16500,30,Gareth Lloyd,2022-05-25
+C041,Elmhurst Plastics Ltd,Scotland,Manufacturing,199500,60,Tom Beckett,2022-07-05
+C042,Dungate Building Services Limited,North West,Construction,124000,30,Gareth Lloyd,2022-07-23
+C043,Woldbridge Medical Supplies Ltd,South East,Healthcare,83500,60,Aisha Rahman,2022-10-17
+C044,Kelholme Dairies Limited,South West,Food & Drink,56000,60,Helen Marsh,2022-10-17
+C045,Brindale Logistics Ltd,Wales,Distribution,20000,30,Gareth Lloyd,2022-10-18
+C046,Woldford Plastics Limited,Scotland,Manufacturing,9000,30,Tom Beckett,2022-11-06
+C047,Sandgate Building Services Limited,East of England,Construction,77500,60,Tom Beckett,2022-11-29
+C048,Morhurst Outfitters Ltd,London,Retail,34000,45,Aisha Rahman,2022-12-27
+C049,Aldbridge Groundworks Ltd,South East,Construction,27500,60,Aisha Rahman,2023-03-12
+C050,Halgate Dairies Ltd,London,Food & Drink,57000,30,Gareth Lloyd,2023-12-13
+C051,Thornmoor Fabrication Limited,Midlands,Manufacturing,28500,30,Gareth Lloyd,2024-02-01
+C052,Garmere Plastics Ltd,North West,Manufacturing,25500,30,Aisha Rahman,2024-04-13
+C053,Thornthorpe Healthcare Ltd,Midlands,Healthcare,94000,60,Helen Marsh,2024-05-23
+C054,Mordale Construction Limited,Wales,Construction,21500,30,Tom Beckett,2024-06-18
+C055,Sandfield Garden Centres Ltd,Yorkshire,Retail,37000,30,Tom Beckett,2024-07-21
+C056,Whinleigh Healthcare Ltd,North West,Healthcare,10500,45,Gareth Lloyd,2024-07-29
+C057,Garworth Home Stores Ltd,South West,Retail,161000,30,Aisha Rahman,2024-08-13
+C058,Netherstead Wholesale Ltd,Midlands,Distribution,29500,30,Fiona Kerr,2024-09-29
+C059,Calderfield Home Stores Ltd,East of England,Retail,9500,30,Helen Marsh,2024-10-06
+C060,Halhurst Home Stores Ltd,North East,Retail,101000,30,Helen Marsh,2024-12-02
+C061,Cranbridge Contractors Limited,Yorkshire,Construction,126500,30,Tom Beckett,2025-05-03
+C062,Penworth Logistics Limited,Yorkshire,Distribution,158000,45,Aisha Rahman,2025-05-15
+C063,Fernford Consulting Ltd,South East,Professional Services,24500,30,Fiona Kerr,2025-05-24
+C064,Brackgate Surveyors Ltd,East of England,Professional Services,159500,30,Gareth Lloyd,2025-06-12
+C065,Rookdale Freight Services Ltd,London,Distribution,41000,45,Aisha Rahman,2025-06-13
+C066,Brinleigh Construction Ltd,South East,Construction,49500,30,Helen Marsh,2025-06-19
+C067,Rookstead Precision Components Ltd,Midlands,Manufacturing,98000,30,Tom Beckett,2025-07-29
+C068,Fernmere Garden Centres Ltd,London,Retail,28000,30,Fiona Kerr,2025-08-26
+C069,Rookwick Fabrication Limited,Yorkshire,Manufacturing,33000,60,Helen Marsh,2025-10-23
+C070,Hesfield Distribution Ltd,Midlands,Distribution,27500,60,Helen Marsh,2025-12-13
