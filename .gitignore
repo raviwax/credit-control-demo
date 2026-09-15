@@ -1,0 +1,16 @@
+# Local working notes (not published)
+TASK.md
+CLAUDE.md
+.claude/
+docs/email-draft.md
+
+# Power BI build output and local caches
+dist/
+*.pbix
+pbip/**/.pbi/cache.abf
+pbip/**/.pbi/localSettings.json
+
+# Python
+__pycache__/
+.venv/
+.env
