@@ -92,12 +92,13 @@ PROFILES = {
     "Prompt": {"share": 0.35, "late_mean": -5, "late_sd": 5, "risk": 0},
     "Average": {"share": 0.40, "late_mean": 8, "late_sd": 10, "risk": 1},
     "Slow": {"share": 0.18, "late_mean": 35, "late_sd": 15, "risk": 2},
-    "Problem": {"share": 0.07, "late_mean": 70, "late_sd": 25, "risk": 2},
+    "Problem": {"share": 0.07, "late_mean": 100, "late_sd": 25, "risk": 1},
 }
-# Credit limits follow payment record: riskier profiles are pushed down the limit ranking
+# Credit limits follow payment record: riskier profiles are pushed down the limit ranking.
+# Problem customers rank with Average because their limits were set before they deteriorated.
 LIMIT_TILT = 0.15
 # Problem customers pay like Slow ones until a deterioration date, then turn bad
-PROBLEM_ONSET_RANGE = (np.datetime64("2025-08-01"), np.datetime64("2026-01-31"))
+PROBLEM_ONSET_RANGE = (np.datetime64("2025-06-01"), np.datetime64("2025-12-31"))
 PROBLEM_NEVER_PAID = 0.25
 
 # Invoicing volume and value
@@ -502,6 +503,9 @@ def report(customers, invoices, allocations, expected, stats) -> bool:
         print(f"  {row.CustomerID:<5}{row.CustomerName:<46}{row.Profile:<9}{row.Utilisation:>7.0%}")
 
     problem_in_top10 = int((top10["Profile"] == "Problem").sum())
+    d91_pct = total["D91_120"] / outstanding
+    d91_customers = int((per_customer["D91_120"] > 0).sum())
+    steps_down = total["D61_90"] > total["D91_120"] > total["D120plus"]
     checks = [
         ("Invoices ~3,000 (2,700-3,300)", 2_700 <= len(invoices) <= 3_300, f"{len(invoices):,}"),
         ("Outstanding GBP 1.5m-2.5m", 150_000_000 <= outstanding <= 250_000_000, gbp(outstanding)),
@@ -510,6 +514,9 @@ def report(customers, invoices, allocations, expected, stats) -> bool:
         ("Over 120 days 3-8% of outstanding", 0.03 <= over120_pct <= 0.08, f"{over120_pct:.1%}"),
         ("3-6 customers over credit limit", 3 <= len(over_limit) <= 6, str(len(over_limit))),
         ("2+ Problem customers in top 10 overdue", problem_in_top10 >= 2, str(problem_in_top10)),
+        ("91-120 days 2-4% of outstanding", 0.02 <= d91_pct <= 0.04, f"{d91_pct:.1%}"),
+        ("91-120 days across 3+ customers", d91_customers >= 3, str(d91_customers)),
+        ("Buckets step down 61-90 > 91-120 > 120+", steps_down, ""),
     ]
     print("\nSanity targets")
     for label, ok, value in checks:
