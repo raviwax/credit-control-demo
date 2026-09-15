@@ -46,260 +46,260 @@
       "displayName": "Credit Control",
       "displayOption": 1,
       "filters": "[]",
-      "height": 720.00,
+      "height": 720.0,
       "name": "39eb6a5e650ec3d54b32",
       "visualContainers": [
         {
-          "config": "{\"name\":\"1574f38c7a5b3beab7ee\",\"layouts\":[{\"id\":0,\"position\":{\"x\":520,\"y\":76,\"z\":7000,\"width\":240,\"height\":96,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue %\"},\"Name\":\"_Measures.Overdue %\",\"NativeReferenceName\":\"Overdue %\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"1574f38c7a5b3beab7ee\",\"layouts\":[{\"id\":0,\"position\":{\"x\":520,\"y\":76,\"z\":7000,\"width\":240,\"height\":80,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue %\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue %\"},\"Name\":\"_Measures.Overdue %\",\"NativeReferenceName\":\"Overdue %\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 520.00,
-          "y": 76.00,
-          "z": 7000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 520.0,
+          "y": 76.0,
+          "z": 7000.0
         },
         {
           "config": "{\"name\":\"2f083b7e3d84a65c5c96\",\"layouts\":[{\"id\":0,\"position\":{\"x\":700,\"y\":8,\"z\":2000,\"width\":180,\"height\":56,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"AsAt.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"AsAt\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Date\"},\"Name\":\"AsAt.Date\",\"NativeReferenceName\":\"Date\"}]},\"columnProperties\":{\"AsAt.Date\":{\"displayName\":\"As at\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
-          "height": 56.00,
-          "width": 180.00,
-          "x": 700.00,
-          "y": 8.00,
-          "z": 2000.00
+          "height": 56.0,
+          "width": 180.0,
+          "x": 700.0,
+          "y": 8.0,
+          "z": 2000.0
         },
         {
-          "config": "{\"name\":\"46824c94980fe18055ca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":448,\"z\":12000,\"width\":1248,\"height\":240,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.CustomerName\"},{\"queryRef\":\"Customers.AccountManager\"},{\"queryRef\":\"_Measures.Outstanding\"},{\"queryRef\":\"_Measures.Overdue\"},{\"queryRef\":\"_Measures.Oldest Overdue Days\"},{\"queryRef\":\"Customers.CreditLimit\"},{\"queryRef\":\"_Measures.Credit Limit Utilisation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Customers\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Customers.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AccountManager\"},\"Name\":\"Customers.AccountManager\",\"NativeReferenceName\":\"AccountManager\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Oldest Overdue Days\"},\"Name\":\"_Measures.Oldest Overdue Days\",\"NativeReferenceName\":\"Oldest Overdue Days\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CreditLimit\"},\"Name\":\"Customers.CreditLimit\",\"NativeReferenceName\":\"CreditLimit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Credit Limit Utilisation\"},\"Name\":\"_Measures.Credit Limit Utilisation\",\"NativeReferenceName\":\"Credit Limit Utilisation\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue\"}}}]},\"columnProperties\":{\"Customers.CustomerName\":{\"displayName\":\"Customer\"},\"Customers.AccountManager\":{\"displayName\":\"Account manager\"},\"_Measures.Oldest Overdue Days\":{\"displayName\":\"Oldest overdue (days)\"},\"Customers.CreditLimit\":{\"displayName\":\"Credit limit\"},\"_Measures.Credit Limit Utilisation\":{\"displayName\":\"Limit used\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"300D\"}}}},\"selector\":{\"metadata\":\"Customers.CustomerName\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"180D\"}}}},\"selector\":{\"metadata\":\"Customers.AccountManager\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Outstanding\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Overdue\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"160D\"}}}},\"selector\":{\"metadata\":\"_Measures.Oldest Overdue Days\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"Customers.CreditLimit\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Credit Limit Utilisation\"}}],\"columnHeaders\":[{\"properties\":{}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top 10 overdue customers'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"46824c94980fe18055ca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":384,\"z\":12000,\"width\":1248,\"height\":304,\"tabOrder\":12000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.CustomerName\"},{\"queryRef\":\"Customers.AccountManager\"},{\"queryRef\":\"_Measures.Outstanding\"},{\"queryRef\":\"_Measures.Overdue\"},{\"queryRef\":\"_Measures.Oldest Overdue Days\"},{\"queryRef\":\"Customers.CreditLimit\"},{\"queryRef\":\"_Measures.Credit Limit Utilisation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Customers\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Customers.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AccountManager\"},\"Name\":\"Customers.AccountManager\",\"NativeReferenceName\":\"AccountManager\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Oldest Overdue Days\"},\"Name\":\"_Measures.Oldest Overdue Days\",\"NativeReferenceName\":\"Oldest Overdue Days\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CreditLimit\"},\"Name\":\"Customers.CreditLimit\",\"NativeReferenceName\":\"CreditLimit\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Credit Limit Utilisation\"},\"Name\":\"_Measures.Credit Limit Utilisation\",\"NativeReferenceName\":\"Credit Limit Utilisation\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue\"}}}]},\"columnProperties\":{\"Customers.CustomerName\":{\"displayName\":\"Customer\"},\"Customers.AccountManager\":{\"displayName\":\"Account manager\"},\"_Measures.Oldest Overdue Days\":{\"displayName\":\"Oldest overdue (days)\"},\"Customers.CreditLimit\":{\"displayName\":\"Credit limit\"},\"_Measures.Credit Limit Utilisation\":{\"displayName\":\"Limit used\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"300D\"}}}},\"selector\":{\"metadata\":\"Customers.CustomerName\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"180D\"}}}},\"selector\":{\"metadata\":\"Customers.AccountManager\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Outstanding\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Overdue\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"160D\"}}}},\"selector\":{\"metadata\":\"_Measures.Oldest Overdue Days\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"Customers.CreditLimit\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"140D\"}}}},\"selector\":{\"metadata\":\"_Measures.Credit Limit Utilisation\"}}],\"columnHeaders\":[{\"properties\":{}}],\"columnFormatting\":[{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Outstanding\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Overdue\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Oldest Overdue Days\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"Customers.CreditLimit\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Credit Limit Utilisation\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top 10 overdue customers'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[{\"name\":\"4eecf5bcfc99db953bbc\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Top 10 Overdue\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Top 10 Overdue\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
-          "height": 240.00,
-          "width": 1248.00,
-          "x": 16.00,
-          "y": 448.00,
-          "z": 12000.00
+          "height": 304,
+          "width": 1248,
+          "x": 16,
+          "y": 384,
+          "z": 12000.0
         },
         {
-          "config": "{\"name\":\"552cb5d0b1aec0c075d8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":772,\"y\":76,\"z\":8000,\"width\":240,\"height\":96,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.DSO (90-day)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DSO (90-day)\"},\"Name\":\"_Measures.DSO (90-day)\",\"NativeReferenceName\":\"DSO (90-day)\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"552cb5d0b1aec0c075d8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":772,\"y\":76,\"z\":8000,\"width\":240,\"height\":80,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.DSO (90-day)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DSO (90-day)\"},\"Name\":\"_Measures.DSO (90-day)\",\"NativeReferenceName\":\"DSO (90-day)\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 772.00,
-          "y": 76.00,
-          "z": 8000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 772.0,
+          "y": 76.0,
+          "z": 8000.0
         },
         {
           "config": "{\"name\":\"70e60fb7271977e26dc7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1084,\"y\":8,\"z\":4000,\"width\":180,\"height\":56,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.AccountManager\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Customers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AccountManager\"},\"Name\":\"Customers.AccountManager\",\"NativeReferenceName\":\"AccountManager\"}]},\"columnProperties\":{\"Customers.AccountManager\":{\"displayName\":\"Account manager\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
-          "height": 56.00,
-          "width": 180.00,
-          "x": 1084.00,
-          "y": 8.00,
-          "z": 4000.00
+          "height": 56.0,
+          "width": 180.0,
+          "x": 1084.0,
+          "y": 8.0,
+          "z": 4000.0
         },
         {
-          "config": "{\"name\":\"8b9cbaa01e625f026654\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":184,\"z\":11000,\"width\":624,\"height\":252,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Year Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding at Month End\"},{\"queryRef\":\"_Measures.Overdue at Month End\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"},\"Name\":\"Date.Year Month\",\"NativeReferenceName\":\"Year Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding at Month End\"},\"Name\":\"_Measures.Outstanding at Month End\",\"NativeReferenceName\":\"Outstanding at Month End\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue at Month End\"},\"Name\":\"_Measures.Overdue at Month End\",\"NativeReferenceName\":\"Overdue at Month End\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Month-end outstanding vs overdue'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"8b9cbaa01e625f026654\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":168,\"z\":11000,\"width\":624,\"height\":204,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Year Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding at Month End\"},{\"queryRef\":\"_Measures.Overdue at Month End\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"},\"Name\":\"Date.Year Month\",\"NativeReferenceName\":\"Year Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding at Month End\"},\"Name\":\"_Measures.Outstanding at Month End\",\"NativeReferenceName\":\"Outstanding at Month End\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Overdue at Month End\"},\"Name\":\"_Measures.Overdue at Month End\",\"NativeReferenceName\":\"Overdue at Month End\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"}}}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Month-end outstanding vs overdue'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[{\"name\":\"03a09dead6a6330113b5\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"In Trend Window\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"In Trend Window\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
-          "height": 252.00,
-          "width": 624.00,
-          "x": 640.00,
-          "y": 184.00,
-          "z": 11000.00
+          "height": 204,
+          "width": 624,
+          "x": 640,
+          "y": 168,
+          "z": 11000.0
         },
         {
-          "config": "{\"name\":\"9c3e1c5a318af1f41dc1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":268,\"y\":76,\"z\":6000,\"width\":240,\"height\":96,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"9c3e1c5a318af1f41dc1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":268,\"y\":76,\"z\":6000,\"width\":240,\"height\":80,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 268.00,
-          "y": 76.00,
-          "z": 6000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 268.0,
+          "y": 76.0,
+          "z": 6000.0
         },
         {
           "config": "{\"name\":\"b0237689512ea62da33a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":14,\"z\":1000,\"width\":260,\"height\":40,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.As At Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"As At Label\"},\"Name\":\"_Measures.As At Label\",\"NativeReferenceName\":\"As At Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#4A5568'\"}}}}},\"preserveWhitespace\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
           "filters": "[]",
-          "height": 40.00,
-          "width": 260.00,
-          "x": 440.00,
-          "y": 14.00,
-          "z": 1000.00
+          "height": 40.0,
+          "width": 260.0,
+          "x": 440.0,
+          "y": 14.0,
+          "z": 1000.0
         },
         {
-          "config": "{\"name\":\"bca9c1a91e0b24c09773\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":76,\"z\":5000,\"width\":240,\"height\":96,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Outstanding\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"bca9c1a91e0b24c09773\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":76,\"z\":5000,\"width\":240,\"height\":80,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Outstanding\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 16.00,
-          "y": 76.00,
-          "z": 5000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 16.0,
+          "y": 76.0,
+          "z": 5000.0
         },
         {
-          "config": "{\"name\":\"c4b86b983e3b8bb1b9e4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1024,\"y\":76,\"z\":9000,\"width\":240,\"height\":96,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Customers Over Limit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Customers Over Limit\"},\"Name\":\"_Measures.Customers Over Limit\",\"NativeReferenceName\":\"Customers Over Limit\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"c4b86b983e3b8bb1b9e4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1024,\"y\":76,\"z\":9000,\"width\":240,\"height\":80,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Customers Over Limit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Customers Over Limit\"},\"Name\":\"_Measures.Customers Over Limit\",\"NativeReferenceName\":\"Customers Over Limit\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 1024.00,
-          "y": 76.00,
-          "z": 9000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 1024.0,
+          "y": 76.0,
+          "z": 9000.0
         },
         {
           "config": "{\"name\":\"c86cf822ba7734582fa9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":694,\"z\":13000,\"width\":600,\"height\":22,\"tabOrder\":13000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Synthetic data — all customers and transactions are generated.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"9pt\",\"color\":\"#8D99AE\"}}]}]}}]}}}",
           "filters": "[]",
-          "height": 22.00,
-          "width": 600.00,
-          "x": 16.00,
-          "y": 694.00,
-          "z": 13000.00
+          "height": 22.0,
+          "width": 600.0,
+          "x": 16.0,
+          "y": 694.0,
+          "z": 13000.0
         },
         {
           "config": "{\"name\":\"d27bd894fad26dbe3c2e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":892,\"y\":8,\"z\":3000,\"width\":180,\"height\":56,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.Region\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Customers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Customers.Region\",\"NativeReferenceName\":\"Region\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
           "filters": "[]",
-          "height": 56.00,
-          "width": 180.00,
-          "x": 892.00,
-          "y": 8.00,
-          "z": 3000.00
+          "height": 56.0,
+          "width": 180.0,
+          "x": 892.0,
+          "y": 8.0,
+          "z": 3000.0
         },
         {
-          "config": "{\"name\":\"e099fae57ce77482aa52\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":184,\"z\":10000,\"width\":612,\"height\":252,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Ageing Bucket.Bucket\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding by Bucket\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Ageing Bucket\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"},\"Name\":\"Ageing Bucket.Bucket\",\"NativeReferenceName\":\"Bucket\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding by Bucket\"},\"Name\":\"_Measures.Outstanding by Bucket\",\"NativeReferenceName\":\"Outstanding by Bucket\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Bucket Colour\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Outstanding by ageing bucket'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"e099fae57ce77482aa52\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":168,\"z\":10000,\"width\":612,\"height\":204,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Ageing Bucket.Bucket\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding by Bucket\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Ageing Bucket\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"},\"Name\":\"Ageing Bucket.Bucket\",\"NativeReferenceName\":\"Bucket\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding by Bucket\"},\"Name\":\"_Measures.Outstanding by Bucket\",\"NativeReferenceName\":\"Outstanding by Bucket\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Bucket Colour\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Outstanding by ageing bucket'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 252.00,
-          "width": 612.00,
-          "x": 16.00,
-          "y": 184.00,
-          "z": 10000.00
+          "height": 204,
+          "width": 612,
+          "x": 16,
+          "y": 168,
+          "z": 10000.0
         },
         {
           "config": "{\"name\":\"e4310f1fb847c2fee670\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":12,\"z\":0,\"width\":420,\"height\":44,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Credit Control — Debtor Ageing\",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"20pt\",\"color\":\"#1F3A5F\"}}]}]}}]}}}",
           "filters": "[]",
-          "height": 44.00,
-          "width": 420.00,
-          "x": 16.00,
-          "y": 12.00,
-          "z": 0.00
+          "height": 44.0,
+          "width": 420.0,
+          "x": 16.0,
+          "y": 12.0,
+          "z": 0.0
         }
       ],
-      "width": 1280.00
+      "width": 1280.0
     },
     {
       "config": "{}",
       "displayName": "About",
       "displayOption": 1,
       "filters": "[]",
-      "height": 720.00,
+      "height": 720.0,
       "name": "5ef3c8faa85276c84d3f",
       "ordinal": 2,
       "visualContainers": [
         {
           "config": "{\"name\":\"8e61b52197adfdb9cfe4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":16,\"z\":0,\"width\":1248,\"height\":688,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"About this report\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"16pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"A debtor ageing view of a sales ledger: what customers owe, how much is overdue, how old the debt is, and who needs chasing.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]},{\"textRuns\":[{\"value\":\"Data. \",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}},{\"value\":\"Every customer, invoice and receipt is synthetic, produced by the Python generator in the repository (fixed seed, reproducible). No real companies or transactions.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]},{\"textRuns\":[{\"value\":\"Model. \",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}},{\"value\":\"Star schema: Customers → Invoices → Allocations, with a Date table filtering receipts. Two disconnected tables drive the report: AsAt (the as-at slicer) and Ageing Bucket (the ageing axis). Measures read them directly rather than through relationships.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]},{\"textRuns\":[{\"value\":\"As-at snapshot. \",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}},{\"value\":\"Balances are snapshots, not sums of a date-filtered fact: each balance removes the Date filter and keeps invoices and receipts dated on or before the as-at date.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]},{\"textRuns\":[{\"value\":\"Dynamic ageing. \",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}},{\"value\":\"For the as-at date, a virtual table of open invoices carries each invoice's balance and days past due; each bucket on the axis keeps the invoices whose days fall inside its bounds.\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]},{\"textRuns\":[{\"value\":\"Source. \",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F3A5F\",\"fontWeight\":\"bold\"}},{\"value\":\"github.com/raviwax/credit-control-demo\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"11pt\",\"color\":\"#1F2A37\"}}]}]}}]}}}",
           "filters": "[]",
-          "height": 688.00,
-          "width": 1248.00,
-          "x": 16.00,
-          "y": 16.00,
-          "z": 0.00
+          "height": 688.0,
+          "width": 1248.0,
+          "x": 16.0,
+          "y": 16.0,
+          "z": 0.0
         }
       ],
-      "width": 1280.00
+      "width": 1280.0
     },
     {
       "config": "{\"type\":2}",
       "displayName": "Customer",
       "displayOption": 1,
       "filters": "[{\"name\":\"7411ca1ea5bd0533ae11\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Customers\"}},\"Property\":\"CustomerName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Customers\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CustomerName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Brincombe Retail Ltd'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":5}]",
-      "height": 720.00,
+      "height": 720.0,
       "name": "acdce4221083a5b4c323",
       "ordinal": 1,
       "visualContainers": [
         {
           "config": "{\"name\":\"3d471d00947bad618a8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":64,\"y\":8,\"z\":1000,\"width\":1200,\"height\":84,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.CustomerName\"},{\"queryRef\":\"Customers.Region\"},{\"queryRef\":\"Customers.Industry\"},{\"queryRef\":\"Customers.PaymentTermsDays\"},{\"queryRef\":\"Customers.AccountManager\"},{\"queryRef\":\"Customers.CustomerSince\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Customers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerName\"},\"Name\":\"Customers.CustomerName\",\"NativeReferenceName\":\"CustomerName\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Region\"},\"Name\":\"Customers.Region\",\"NativeReferenceName\":\"Region\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Industry\"},\"Name\":\"Customers.Industry\",\"NativeReferenceName\":\"Industry\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"PaymentTermsDays\"},\"Name\":\"Customers.PaymentTermsDays\",\"NativeReferenceName\":\"PaymentTermsDays\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AccountManager\"},\"Name\":\"Customers.AccountManager\",\"NativeReferenceName\":\"AccountManager\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CustomerSince\"},\"Name\":\"Customers.CustomerSince\",\"NativeReferenceName\":\"CustomerSince\"}]},\"columnProperties\":{\"Customers.CustomerName\":{\"displayName\":\"Customer\"},\"Customers.PaymentTermsDays\":{\"displayName\":\"Terms (days)\"},\"Customers.AccountManager\":{\"displayName\":\"Account manager\"},\"Customers.CustomerSince\":{\"displayName\":\"Customer since\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}],\"card\":[{\"properties\":{\"barShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 84.00,
-          "width": 1200.00,
-          "x": 64.00,
-          "y": 8.00,
-          "z": 1000.00
+          "height": 84.0,
+          "width": 1200.0,
+          "x": 64.0,
+          "y": 8.0,
+          "z": 1000.0
         },
         {
-          "config": "{\"name\":\"65e380d51803dca8fc93\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":212,\"z\":7000,\"width\":612,\"height\":224,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Ageing Bucket.Bucket\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding by Bucket\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Ageing Bucket\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"},\"Name\":\"Ageing Bucket.Bucket\",\"NativeReferenceName\":\"Bucket\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding by Bucket\"},\"Name\":\"_Measures.Outstanding by Bucket\",\"NativeReferenceName\":\"Outstanding by Bucket\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Bucket Colour\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Outstanding by ageing bucket'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"65e380d51803dca8fc93\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":196,\"z\":7000,\"width\":612,\"height\":200,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Ageing Bucket.Bucket\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Outstanding by Bucket\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Ageing Bucket\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"},\"Name\":\"Ageing Bucket.Bucket\",\"NativeReferenceName\":\"Bucket\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Outstanding by Bucket\"},\"Name\":\"_Measures.Outstanding by Bucket\",\"NativeReferenceName\":\"Outstanding by Bucket\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Bucket\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Bucket Colour\"}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Outstanding by ageing bucket'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 224.00,
-          "width": 612.00,
-          "x": 16.00,
-          "y": 212.00,
-          "z": 7000.00
+          "height": 200,
+          "width": 612,
+          "x": 16,
+          "y": 196,
+          "z": 7000.0
         },
         {
-          "config": "{\"name\":\"7bb646f077b6733c0f8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":772,\"y\":104,\"z\":5000,\"width\":240,\"height\":96,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Oldest Overdue Days\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Oldest Overdue Days\"},\"Name\":\"_Measures.Oldest Overdue Days\",\"NativeReferenceName\":\"Oldest Overdue Days\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"7bb646f077b6733c0f8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":772,\"y\":104,\"z\":5000,\"width\":240,\"height\":80,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Oldest Overdue Days\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Oldest Overdue Days\"},\"Name\":\"_Measures.Oldest Overdue Days\",\"NativeReferenceName\":\"Oldest Overdue Days\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 772.00,
-          "y": 104.00,
-          "z": 5000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 772.0,
+          "y": 104.0,
+          "z": 5000.0
         },
         {
-          "config": "{\"name\":\"7cad1d30e9e3faa271b1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1024,\"y\":104,\"z\":6000,\"width\":240,\"height\":96,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Open Invoices\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Open Invoices\"},\"Name\":\"_Measures.Open Invoices\",\"NativeReferenceName\":\"Open Invoices\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"7cad1d30e9e3faa271b1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1024,\"y\":104,\"z\":6000,\"width\":240,\"height\":80,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Open Invoices\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Open Invoices\"},\"Name\":\"_Measures.Open Invoices\",\"NativeReferenceName\":\"Open Invoices\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 1024.00,
-          "y": 104.00,
-          "z": 6000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 1024.0,
+          "y": 104.0,
+          "z": 6000.0
         },
         {
-          "config": "{\"name\":\"8ec113684b9920e63118\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":212,\"z\":8000,\"width\":624,\"height\":224,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Year Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Cash Received\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"},\"Name\":\"Date.Year Month\",\"NativeReferenceName\":\"Year Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Cash Received\"},\"Name\":\"_Measures.Cash Received\",\"NativeReferenceName\":\"Cash Received\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2A9D8F'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cash received by month'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"8ec113684b9920e63118\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":196,\"z\":8000,\"width\":624,\"height\":200,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.Year Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Cash Received\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"},\"Name\":\"Date.Year Month\",\"NativeReferenceName\":\"Year Month\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Cash Received\"},\"Name\":\"_Measures.Cash Received\",\"NativeReferenceName\":\"Cash Received\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Year Month\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2A9D8F'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cash received by month'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[{\"name\":\"bc6125b90eb485058604\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"In Trend Window\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"In Trend Window\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
-          "height": 224.00,
-          "width": 624.00,
-          "x": 640.00,
-          "y": 212.00,
-          "z": 8000.00
+          "height": 200,
+          "width": 624,
+          "x": 640,
+          "y": 196,
+          "z": 8000.0
         },
         {
-          "config": "{\"name\":\"98d835f632053cf6428a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":520,\"y\":104,\"z\":4000,\"width\":240,\"height\":96,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Credit Limit Utilisation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Credit Limit Utilisation\"},\"Name\":\"_Measures.Credit Limit Utilisation\",\"NativeReferenceName\":\"Credit Limit Utilisation\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"98d835f632053cf6428a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":520,\"y\":104,\"z\":4000,\"width\":240,\"height\":80,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Credit Limit Utilisation\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Credit Limit Utilisation\"},\"Name\":\"_Measures.Credit Limit Utilisation\",\"NativeReferenceName\":\"Credit Limit Utilisation\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 520.00,
-          "y": 104.00,
-          "z": 4000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 520.0,
+          "y": 104.0,
+          "z": 4000.0
         },
         {
           "config": "{\"name\":\"b577cea82970a41143da\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":28,\"z\":0,\"width\":40,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
           "filters": "[]",
-          "height": 40.00,
-          "width": 40.00,
-          "x": 16.00,
-          "y": 28.00,
-          "z": 0.00
+          "height": 40.0,
+          "width": 40.0,
+          "x": 16.0,
+          "y": 28.0,
+          "z": 0.0
         },
         {
-          "config": "{\"name\":\"c5d6ce2bb218c59c7467\",\"layouts\":[{\"id\":0,\"position\":{\"x\":268,\"y\":104,\"z\":3000,\"width\":240,\"height\":96,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"c5d6ce2bb218c59c7467\",\"layouts\":[{\"id\":0,\"position\":{\"x\":268,\"y\":104,\"z\":3000,\"width\":240,\"height\":80,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Overdue\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Overdue\"},\"Name\":\"_Measures.Overdue\",\"NativeReferenceName\":\"Overdue\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 268.00,
-          "y": 104.00,
-          "z": 3000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 268.0,
+          "y": 104.0,
+          "z": 3000.0
         },
         {
-          "config": "{\"name\":\"da18eb0c56e7bb855d8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":448,\"z\":9000,\"width\":1248,\"height\":260,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Invoices.InvoiceID\"},{\"queryRef\":\"Invoices.InvoiceDate\"},{\"queryRef\":\"Invoices.DueDate\"},{\"queryRef\":\"Invoices.Amount\"},{\"queryRef\":\"_Measures.Invoice Balance\"},{\"queryRef\":\"_Measures.Days Overdue\"},{\"queryRef\":\"_Measures.Invoice Status\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Invoices\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"InvoiceID\"},\"Name\":\"Invoices.InvoiceID\",\"NativeReferenceName\":\"InvoiceID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"InvoiceDate\"},\"Name\":\"Invoices.InvoiceDate\",\"NativeReferenceName\":\"InvoiceDate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DueDate\"},\"Name\":\"Invoices.DueDate\",\"NativeReferenceName\":\"DueDate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Amount\"},\"Name\":\"Invoices.Amount\",\"NativeReferenceName\":\"Amount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Invoice Balance\"},\"Name\":\"_Measures.Invoice Balance\",\"NativeReferenceName\":\"Invoice Balance\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Days Overdue\"},\"Name\":\"_Measures.Days Overdue\",\"NativeReferenceName\":\"Days Overdue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Invoice Status\"},\"Name\":\"_Measures.Invoice Status\",\"NativeReferenceName\":\"Invoice Status\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Days Overdue\"}}}]},\"columnProperties\":{\"Invoices.InvoiceID\":{\"displayName\":\"Invoice\"},\"Invoices.InvoiceDate\":{\"displayName\":\"Invoice date\"},\"Invoices.DueDate\":{\"displayName\":\"Due date\"},\"_Measures.Invoice Balance\":{\"displayName\":\"Balance\"},\"_Measures.Invoice Status\":{\"displayName\":\"Status\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"150D\"}}}},\"selector\":{\"metadata\":\"Invoices.InvoiceID\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.InvoiceDate\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.DueDate\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.Amount\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Balance\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"160D\"}}}},\"selector\":{\"metadata\":\"_Measures.Days Overdue\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"180D\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Status\"}}],\"columnHeaders\":[{\"properties\":{}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"Invoices.Amount\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Balance\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Days Overdue\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Open invoices'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"da18eb0c56e7bb855d8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":408,\"z\":9000,\"width\":1248,\"height\":300,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Invoices.InvoiceID\"},{\"queryRef\":\"Invoices.InvoiceDate\"},{\"queryRef\":\"Invoices.DueDate\"},{\"queryRef\":\"Invoices.Amount\"},{\"queryRef\":\"_Measures.Invoice Balance\"},{\"queryRef\":\"_Measures.Days Overdue\"},{\"queryRef\":\"_Measures.Invoice Status\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Invoices\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"InvoiceID\"},\"Name\":\"Invoices.InvoiceID\",\"NativeReferenceName\":\"InvoiceID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"InvoiceDate\"},\"Name\":\"Invoices.InvoiceDate\",\"NativeReferenceName\":\"InvoiceDate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"DueDate\"},\"Name\":\"Invoices.DueDate\",\"NativeReferenceName\":\"DueDate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Amount\"},\"Name\":\"Invoices.Amount\",\"NativeReferenceName\":\"Amount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Invoice Balance\"},\"Name\":\"_Measures.Invoice Balance\",\"NativeReferenceName\":\"Invoice Balance\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Days Overdue\"},\"Name\":\"_Measures.Days Overdue\",\"NativeReferenceName\":\"Days Overdue\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Invoice Status\"},\"Name\":\"_Measures.Invoice Status\",\"NativeReferenceName\":\"Invoice Status\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Days Overdue\"}}}]},\"columnProperties\":{\"Invoices.InvoiceID\":{\"displayName\":\"Invoice\"},\"Invoices.InvoiceDate\":{\"displayName\":\"Invoice date\"},\"Invoices.DueDate\":{\"displayName\":\"Due date\"},\"_Measures.Invoice Balance\":{\"displayName\":\"Balance\"},\"_Measures.Invoice Status\":{\"displayName\":\"Status\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"150D\"}}}},\"selector\":{\"metadata\":\"Invoices.InvoiceID\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.InvoiceDate\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.DueDate\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"Invoices.Amount\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"170D\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Balance\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"160D\"}}}},\"selector\":{\"metadata\":\"_Measures.Days Overdue\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"180D\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Status\"}}],\"columnHeaders\":[{\"properties\":{}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"Invoices.Amount\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Invoice Balance\"}},{\"properties\":{\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}},\"selector\":{\"metadata\":\"_Measures.Days Overdue\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Open invoices'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[{\"name\":\"61bf66f2ade7568e6e4a\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"_Measures\"}},\"Property\":\"Invoice Balance\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":1,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Invoice Balance\"}},\"Right\":{\"Literal\":{\"Value\":\"0D\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1}]",
-          "height": 260.00,
-          "width": 1248.00,
-          "x": 16.00,
-          "y": 448.00,
-          "z": 9000.00
+          "height": 300,
+          "width": 1248,
+          "x": 16,
+          "y": 408,
+          "z": 9000.0
         },
         {
-          "config": "{\"name\":\"f4cc16a853a03e44c869\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":104,\"z\":2000,\"width\":240,\"height\":96,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Outstanding\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}]},\"vcObjects\":{\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"f4cc16a853a03e44c869\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16,\"y\":104,\"z\":2000,\"width\":240,\"height\":80,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Outstanding\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Outstanding\"},\"Name\":\"_Measures.Outstanding\",\"NativeReferenceName\":\"Outstanding\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]},\"vcObjects\":{\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 96.00,
-          "width": 240.00,
-          "x": 16.00,
-          "y": 104.00,
-          "z": 2000.00
+          "height": 80,
+          "width": 240.0,
+          "x": 16.0,
+          "y": 104.0,
+          "z": 2000.0
         }
       ],
-      "width": 1280.00
+      "width": 1280.0
     }
   ],
   "theme": "CreditControl.json"
