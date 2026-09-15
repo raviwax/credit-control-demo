@@ -294,6 +294,28 @@ table _Measures
 		displayFolder: Invoice
 		lineageTag: 5ce58cd1-8163-4875-8f19-d4dbe9641f44
 
+	measure 'Bucket Colour' =
+			// Ageing bar colour by bucket order: green for not yet due through to red for over 120 days
+			SWITCH ( MAX ( 'Ageing Bucket'[Sort] ), 1, "#2A9D8F", 2, "#8AB17D", 3, "#E9C46A", 4, "#F4A261", 5, "#EE8959", 6, "#E76F51" )
+		displayFolder: Formatting
+
+	measure 'In Trend Window' =
+			// 1 for the 13 month ends up to the as-at month; visual filter for the trend charts
+			VAR MonthEnd = MAX ( 'Date'[Month End] )
+			VAR AsAtMonthEnd = EOMONTH ( [As At Date], 0 )
+			RETURN
+			    IF ( MonthEnd <= AsAtMonthEnd && MonthEnd > EOMONTH ( AsAtMonthEnd, -13 ), 1 )
+		formatString: 0
+		displayFolder: Formatting
+
+	measure 'Top 10 Overdue' =
+			// 1 for customers in the top 10 by overdue balance within the current selection; table filter
+			VAR CustomerRank = RANKX ( ALLSELECTED ( Customers ), [Overdue], , DESC, SKIP )
+			RETURN
+			    IF ( [Overdue] > 0 && CustomerRank <= 10, 1 )
+		formatString: 0
+		displayFolder: Formatting
+
 	column Value
 		isHidden
 		formatString: 0
