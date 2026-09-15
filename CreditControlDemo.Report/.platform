@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "CreditControlDemo"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "365bf0b8-7fec-4d50-b323-839c6b1643f4"
+  }
+}

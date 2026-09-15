@@ -1,0 +1,7 @@
+expression DataFolder = "<repo path>\data" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: abac4582-3cbe-42d0-b62b-dbf8400417f3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

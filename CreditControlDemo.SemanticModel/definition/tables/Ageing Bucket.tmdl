@@ -1,0 +1,65 @@
+table 'Ageing Bucket'
+	lineageTag: 6d31ad34-5f3d-4445-b094-02d0a33618ce
+
+	column Bucket
+		lineageTag: b1d0bfe0-304f-43fa-845b-26a4120ac162
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Bucket]
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		isHidden
+		formatString: 0
+		lineageTag: 617f7b2b-0ece-4727-9641-402927d846bb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sort]
+
+		annotation SummarizationSetBy = User
+
+	column MinDays
+		isHidden
+		formatString: 0
+		lineageTag: a5fd665f-79cc-47fc-a1a8-3b15c1f77fd0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MinDays]
+
+		annotation SummarizationSetBy = User
+
+	column MaxDays
+		isHidden
+		formatString: 0
+		lineageTag: c1a9aa98-c94f-4f6b-8b7e-2e4169fff51e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MaxDays]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Ageing Bucket' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Bucket", STRING,
+				    "Sort", INTEGER,
+				    "MinDays", INTEGER,
+				    "MaxDays", INTEGER,
+				    {
+				        { "Not yet due", 1, -100000, 0 },
+				        { "1–30 days", 2, 1, 30 },
+				        { "31–60 days", 3, 31, 60 },
+				        { "61–90 days", 4, 61, 90 },
+				        { "91–120 days", 5, 91, 120 },
+				        { "Over 120 days", 6, 121, 100000 }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = b63cdc560e524012944543c9e3da2d4d
+

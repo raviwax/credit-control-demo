@@ -1,0 +1,109 @@
+table Customers
+	lineageTag: 9a64f4be-727c-4d9e-acf2-cf4e31c498c4
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: 53eb1df8-0173-400e-8acf-affecdc4996b
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 0e58e2d7-e834-41e8-8513-73a77d89c845
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: a67fa0fd-e43e-42b2-abd8-4919bc34271f
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: b810060b-81a5-4e58-8203-cda785df69d0
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditLimit
+		dataType: decimal
+		formatString: £#,##0
+		lineageTag: a67867ca-1e87-4086-b48d-8b860f135aba
+		summarizeBy: none
+		sourceColumn: CreditLimit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column PaymentTermsDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 9feae4d4-00c7-440f-95a5-499b7cd5202b
+		summarizeBy: none
+		sourceColumn: PaymentTermsDays
+
+		annotation SummarizationSetBy = User
+
+	column AccountManager
+		dataType: string
+		lineageTag: cb173da1-dc73-48f6-b788-72f1c47f11d7
+		summarizeBy: none
+		sourceColumn: AccountManager
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerSince
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: aa032af5-70fa-4147-b67e-17209070b31e
+		summarizeBy: none
+		sourceColumn: CustomerSince
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition Customers = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(Text.TrimEnd(DataFolder, "\") & "\customers.csv"),
+				        [Delimiter = ",", Columns = 8, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {
+				            {"CustomerID", type text},
+				            {"CustomerName", type text},
+				            {"Region", type text},
+				            {"Industry", type text},
+				            {"CreditLimit", Currency.Type},
+				            {"PaymentTermsDays", Int64.Type},
+				            {"AccountManager", type text},
+				            {"CustomerSince", type date}
+				        },
+				        "en-GB"
+				    )
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

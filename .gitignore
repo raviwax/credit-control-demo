@@ -2,13 +2,14 @@
 TASK.md
 CLAUDE.md
 .claude/
+_local/
 docs/email-draft.md
 
 # Power BI build output and local caches
 dist/
 *.pbix
-pbip/**/.pbi/cache.abf
-pbip/**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
 
 # Python
 __pycache__/

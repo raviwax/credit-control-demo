@@ -1,0 +1,86 @@
+table Invoices
+	lineageTag: 78d5dbf7-ef48-480e-bd2b-100155d41866
+
+	column InvoiceID
+		dataType: string
+		lineageTag: 0ad3ac77-9f86-41cb-8aa7-791d3fa717cd
+		summarizeBy: none
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: 6c50e190-4608-442b-b318-7d0221552ebd
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: ce405b91-de95-4ab4-af1f-32539b5d6ba0
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column DueDate
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: b34bb003-c5ea-4a13-ab2f-025d57a70817
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Amount
+		dataType: decimal
+		formatString: £#,##0
+		lineageTag: 2a0d3697-e2c6-41c6-a9a5-d31ba9e52bdb
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition Invoices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(Text.TrimEnd(DataFolder, "\") & "\invoices.csv"),
+				        [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+				    ),
+				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(
+				        PromotedHeaders,
+				        {
+				            {"InvoiceID", type text},
+				            {"CustomerID", type text},
+				            {"InvoiceDate", type date},
+				            {"DueDate", type date},
+				            {"Amount", Currency.Type}
+				        },
+				        "en-GB"
+				    )
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,112 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 65.782897965601279,
+        "y": 17.160754518897573
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 652.63157894736833,
+            "y": 430.73684210526312
+          },
+          "nodeIndex": "Allocations",
+          "nodeLineageTag": "b088863a-d908-4755-b685-9ce5f98e5497",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 44.526315789473657,
+            "y": 0
+          },
+          "nodeIndex": "Customers",
+          "nodeLineageTag": "9a64f4be-727c-4d9e-acf2-cf4e31c498c4",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 231.15789473684208,
+            "y": 378.10526315789474
+          },
+          "nodeIndex": "Invoices",
+          "nodeLineageTag": "78d5dbf7-ef48-480e-bd2b-100155d41866",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 386.21052631578954,
+            "y": 0
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "ecfe8f39-c79a-410c-b31d-31c30ed399f9",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 36
+          },
+          "nodeIndex": "AsAt",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1138.421052631579,
+            "y": 267.57894736842104
+          },
+          "nodeIndex": "Ageing Bucket",
+          "nodeLineageTag": "6d31ad34-5f3d-4445-b094-02d0a33618ce",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1140.8421052631579,
+            "y": 499.15789473684214
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "f59c3c99-df7a-4b9d-8ada-76276857a728",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 53.515554312341692,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

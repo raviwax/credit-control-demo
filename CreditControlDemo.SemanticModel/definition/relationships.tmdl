@@ -1,0 +1,17 @@
+relationship 4616d8a1-19df-b7e1-3669-ffb6ea7a710b
+	fromColumn: Invoices.CustomerID
+	toColumn: Customers.CustomerID
+
+relationship 2d8d0476-eab1-7687-965e-84d0c897e4f9
+	fromColumn: Allocations.InvoiceID
+	toColumn: Invoices.InvoiceID
+
+relationship 70cf7b3e-1912-d23f-c651-c9f349df389b
+	fromColumn: Allocations.AllocationDate
+	toColumn: Date.Date
+
+relationship 2a90cb20-eb81-8689-fa4c-c6e069864755
+	isActive: false
+	fromColumn: Invoices.InvoiceDate
+	toColumn: Date.Date
+

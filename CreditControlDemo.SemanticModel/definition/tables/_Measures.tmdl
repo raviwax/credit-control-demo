@@ -1,0 +1,312 @@
+table _Measures
+	lineageTag: f59c3c99-df7a-4b9d-8ada-76276857a728
+
+	measure 'As At Date' =
+			// Selected as-at date; with the slicer clear, the month end of the latest invoice or receipt
+			VAR SelectedDate = SELECTEDVALUE ( AsAt[Date] )
+			VAR LastInvoice = CALCULATE ( MAX ( Invoices[InvoiceDate] ), REMOVEFILTERS () )
+			VAR LastAllocation = CALCULATE ( MAX ( Allocations[AllocationDate] ), REMOVEFILTERS () )
+			RETURN
+			    COALESCE ( SelectedDate, EOMONTH ( MAX ( LastInvoice, LastAllocation ), 0 ) )
+		formatString: dd MMM yyyy
+		displayFolder: Labels
+		lineageTag: b12a77f8-e309-4cf2-9a83-ffc028653d7e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'As At Label' =
+			// Header text for the as-at date in use
+			"As at " & FORMAT ( [As At Date], "dd MMM yyyy" )
+		displayFolder: Labels
+		lineageTag: 872e526d-c62e-4e3b-aca8-787a5a8e2df0
+
+	measure 'Invoiced to Date' =
+			// Invoices raised on or before the as-at date, ignoring any Date filter on the visual
+			VAR AsAtDate = [As At Date]
+			RETURN
+			    CALCULATE (
+			        SUM ( Invoices[Amount] ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] <= AsAtDate
+			    )
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: 9c00200e-f4a1-4074-9b65-ad7626a43492
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated to Date' =
+			// Receipts allocated on or before the as-at date, ignoring any Date filter on the visual
+			VAR AsAtDate = [As At Date]
+			RETURN
+			    CALCULATE (
+			        SUM ( Allocations[Amount] ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Allocations[AllocationDate] <= AsAtDate
+			    )
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: c4935beb-a4b8-4f84-bc5b-210681264ba6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure Outstanding =
+			// Open debtor balance as at the as-at date
+			[Invoiced to Date] - [Allocated to Date]
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: abd253ac-dd1e-4bb6-996c-d0636ca2a878
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cash Received' =
+			// Receipts allocated within the dates on the visual (Date filters Allocation directly)
+			SUM ( Allocations[Amount] )
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: ef561d72-41a0-43f6-b933-79a0ce827d65
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Outstanding at Month End' =
+			// Balance at each month end on the axis; blank after the as-at date so the line stops there
+			VAR MonthEnd = MAX ( 'Date'[Date] )
+			RETURN
+			    IF (
+			        MonthEnd <= [As At Date],
+			        CALCULATE ( SUM ( Invoices[Amount] ), REMOVEFILTERS ( 'Date' ), Invoices[InvoiceDate] <= MonthEnd )
+			            - CALCULATE ( SUM ( Allocations[Amount] ), REMOVEFILTERS ( 'Date' ), Allocations[AllocationDate] <= MonthEnd )
+			    )
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: 64509d76-4555-4148-b0b6-dac0594034be
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Overdue at Month End' =
+			// Balance 1+ days past due at each month end on the axis; blank after the as-at date
+			VAR MonthEnd = MAX ( 'Date'[Date] )
+			VAR OpenItems =
+			    CALCULATETABLE (
+			        ADDCOLUMNS (
+			            SUMMARIZE ( Invoices, Invoices[InvoiceID], Invoices[DueDate], Invoices[Amount] ),
+			            "@Balance",
+			                Invoices[Amount]
+			                    - CALCULATE ( SUM ( Allocations[Amount] ), Allocations[AllocationDate] <= MonthEnd ),
+			            "@Days", INT ( MonthEnd - Invoices[DueDate] )
+			        ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] <= MonthEnd
+			    )
+			RETURN
+			    IF (
+			        MonthEnd <= [As At Date],
+			        SUMX ( FILTER ( OpenItems, [@Balance] > 0.005 && [@Days] >= 1 ), [@Balance] )
+			    )
+		formatString: £#,##0
+		displayFolder: Balances
+		lineageTag: 7c9f668d-1bf6-498d-a175-46a84f059644
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Outstanding by Bucket' =
+			// Dynamic ageing: each invoice's open balance as at d, kept when its days past due fall in the bucket in context
+			VAR AsAtDate = [As At Date]
+			VAR MinDays = MIN ( 'Ageing Bucket'[MinDays] )
+			VAR MaxDays = MAX ( 'Ageing Bucket'[MaxDays] )
+			VAR OpenItems =
+			    CALCULATETABLE (
+			        ADDCOLUMNS (
+			            SUMMARIZE ( Invoices, Invoices[InvoiceID], Invoices[DueDate], Invoices[Amount] ),
+			            "@Balance",
+			                Invoices[Amount]
+			                    - CALCULATE ( SUM ( Allocations[Amount] ), Allocations[AllocationDate] <= AsAtDate ),
+			            "@Days", INT ( AsAtDate - Invoices[DueDate] )
+			        ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] <= AsAtDate
+			    )
+			RETURN
+			    SUMX (
+			        FILTER ( OpenItems, [@Balance] > 0.005 && [@Days] >= MinDays && [@Days] <= MaxDays ),
+			        [@Balance]
+			    )
+		formatString: £#,##0
+		displayFolder: Ageing
+		lineageTag: ee682bf2-ccbb-424c-8194-2114d4a11b99
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure Overdue =
+			// Open balance 1+ days past due as at the as-at date
+			CALCULATE (
+			    [Outstanding by Bucket],
+			    REMOVEFILTERS ( 'Ageing Bucket' ),
+			    'Ageing Bucket'[MinDays] >= 1
+			)
+		formatString: £#,##0
+		displayFolder: Ageing
+		lineageTag: 1b5dc6df-2cab-41d9-92c3-fae869b0cd5c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Not Yet Due' =
+			// Open balance not yet past its due date as at the as-at date
+			CALCULATE (
+			    [Outstanding by Bucket],
+			    REMOVEFILTERS ( 'Ageing Bucket' ),
+			    'Ageing Bucket'[MaxDays] <= 0
+			)
+		formatString: £#,##0
+		displayFolder: Ageing
+		lineageTag: 05e1018f-7430-4b66-878e-5f969d70ee8a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Overdue %' =
+			// Share of the open balance that is past due
+			DIVIDE ( [Overdue], [Outstanding] )
+		formatString: 0.0%
+		displayFolder: KPIs
+		lineageTag: da23dd60-19b0-4c3d-918b-058292cd01f6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Invoices' =
+			// Invoices with a balance above half a penny as at the as-at date
+			VAR AsAtDate = [As At Date]
+			VAR OpenItems =
+			    CALCULATETABLE (
+			        ADDCOLUMNS (
+			            SUMMARIZE ( Invoices, Invoices[InvoiceID], Invoices[Amount] ),
+			            "@Balance",
+			                Invoices[Amount]
+			                    - CALCULATE ( SUM ( Allocations[Amount] ), Allocations[AllocationDate] <= AsAtDate )
+			        ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] <= AsAtDate
+			    )
+			RETURN
+			    COUNTROWS ( FILTER ( OpenItems, [@Balance] > 0.005 ) )
+		formatString: #,##0
+		displayFolder: Ageing
+		lineageTag: fc5265c9-67f3-478a-aa71-bb963da47731
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Oldest Overdue Days' =
+			// Days past due of the oldest open overdue invoice as at the as-at date
+			VAR AsAtDate = [As At Date]
+			VAR OpenItems =
+			    CALCULATETABLE (
+			        ADDCOLUMNS (
+			            SUMMARIZE ( Invoices, Invoices[InvoiceID], Invoices[DueDate], Invoices[Amount] ),
+			            "@Balance",
+			                Invoices[Amount]
+			                    - CALCULATE ( SUM ( Allocations[Amount] ), Allocations[AllocationDate] <= AsAtDate ),
+			            "@Days", INT ( AsAtDate - Invoices[DueDate] )
+			        ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] <= AsAtDate
+			    )
+			RETURN
+			    MAXX ( FILTER ( OpenItems, [@Balance] > 0.005 && [@Days] >= 1 ), [@Days] )
+		formatString: #,##0
+		displayFolder: Ageing
+		lineageTag: 90d078bb-3367-404b-800e-ac6195e2f9f4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'DSO (90-day)' =
+			// Days sales outstanding: outstanding x 90 / invoiced in the 90 days up to the as-at date
+			VAR AsAtDate = [As At Date]
+			VAR Invoiced90 =
+			    CALCULATE (
+			        SUM ( Invoices[Amount] ),
+			        REMOVEFILTERS ( 'Date' ),
+			        Invoices[InvoiceDate] > AsAtDate - 90,
+			        Invoices[InvoiceDate] <= AsAtDate
+			    )
+			RETURN
+			    DIVIDE ( [Outstanding] * 90, Invoiced90 )
+		formatString: #,##0
+		displayFolder: KPIs
+		lineageTag: daa7ce00-935d-414b-8522-e1d10fb0bb7f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Credit Limit Utilisation' =
+			// Outstanding as a share of credit limit; meaningful per customer
+			DIVIDE ( [Outstanding], SUM ( Customers[CreditLimit] ) )
+		formatString: 0.0%
+		displayFolder: KPIs
+		lineageTag: 359f5d04-2c99-46a6-ab95-86c67a026337
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customers Over Limit' =
+			// Customers whose outstanding balance exceeds their credit limit as at the as-at date
+			SUMX (
+			    VALUES ( Customers[CustomerID] ),
+			    IF ( [Outstanding] > CALCULATE ( SUM ( Customers[CreditLimit] ) ), 1, 0 )
+			)
+		formatString: #,##0
+		displayFolder: KPIs
+		lineageTag: 3912336e-f344-4cb8-a905-dbbfdf361581
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Balance' =
+			// Open balance of the invoice in context as at the as-at date; blank once settled
+			VAR Balance = [Outstanding]
+			RETURN
+			    IF ( Balance > 0.005, Balance )
+		formatString: £#,##0
+		displayFolder: Invoice
+		lineageTag: d9ee011a-1bee-4c3f-9a4a-12ba989469ef
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Days Overdue' =
+			// Days past due for a single open invoice as at the as-at date; negative = days until due
+			IF (
+			    HASONEVALUE ( Invoices[InvoiceID] ) && NOT ISBLANK ( [Invoice Balance] ),
+			    INT ( [As At Date] - SELECTEDVALUE ( Invoices[DueDate] ) )
+			)
+		formatString: #,##0
+		displayFolder: Invoice
+		lineageTag: 91b23517-1d13-4f38-9266-28dc264dfd99
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Status' =
+			// Paid / Not yet due / Overdue for a single invoice as at the as-at date
+			VAR AsAtDate = [As At Date]
+			VAR InvoiceDate = SELECTEDVALUE ( Invoices[InvoiceDate] )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        NOT HASONEVALUE ( Invoices[InvoiceID] ) || InvoiceDate > AsAtDate, BLANK (),
+			        ISBLANK ( [Invoice Balance] ), "Paid",
+			        [Days Overdue] >= 1, "Overdue",
+			        "Not yet due"
+			    )
+		displayFolder: Invoice
+		lineageTag: 5ce58cd1-8163-4875-8f19-d4dbe9641f44
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 30de61b6-216e-4543-b4c6-779986ddfb48
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = { BLANK () }
+
+	annotation PBI_Id = 38bd8eab476e4c0c90ef0467c343beae
+

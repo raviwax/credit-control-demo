@@ -1,0 +1,116 @@
+table Date
+	lineageTag: ecfe8f39-c79a-410c-b31d-31c30ed399f9
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: dd MMM yyyy
+		lineageTag: 72adfef3-dec4-48a5-9614-3f448f41b032
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Year
+		formatString: 0
+		lineageTag: 491af91e-0a34-4a41-b9d4-06ae6eb1d6ed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = User
+
+	column MonthNo
+		isHidden
+		formatString: 0
+		lineageTag: 3ff0c518-cae8-44ec-8d78-9e7af1e5684b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		lineageTag: 5c266af7-f28c-4d50-9f0f-887b1d94f3f4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month'
+		lineageTag: c7214de7-6ce8-4d32-8d7d-3d55114b4638
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year Month]
+		sortByColumn: YearMonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthKey
+		isHidden
+		formatString: 0
+		lineageTag: 72d9f6aa-4835-4d4a-9785-3323fae074ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonthKey]
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year'
+		lineageTag: 02c35897-f47f-4962-b339-1a72021ebf94
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month End'
+		formatString: dd MMM yyyy
+		lineageTag: 2109f81f-315e-4642-92d1-c047b295cfec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month End]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Is Month End'
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c5d661ae-1319-4a5a-9ec2-fcddea2c3834
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Is Month End]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				VAR FirstActivity = MIN ( Invoices[InvoiceDate] )
+				VAR LastActivity = MAX ( MAX ( Invoices[InvoiceDate] ), MAX ( Allocations[AllocationDate] ) )
+				VAR StartDate = DATE ( YEAR ( EDATE ( FirstActivity, -3 ) ), 4, 1 )
+				VAR EndDate = EOMONTH ( LastActivity, 1 )
+				RETURN
+				    ADDCOLUMNS (
+				        CALENDAR ( StartDate, EndDate ),
+				        "Year", YEAR ( [Date] ),
+				        "MonthNo", MONTH ( [Date] ),
+				        "Month", FORMAT ( [Date], "MMM" ),
+				        "Year Month", FORMAT ( [Date], "MMM yyyy" ),
+				        "YearMonthKey", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+				        "Fiscal Year",
+				            VAR FyStart = YEAR ( EDATE ( [Date], -3 ) )
+				            RETURN "FY" & FyStart & "/" & RIGHT ( FyStart + 1, 2 ),
+				        "Month End", EOMONTH ( [Date], 0 ),
+				        "Is Month End", [Date] = EOMONTH ( [Date], 0 )
+				    )
+
+	annotation PBI_Id = 2507e1fbb6f2453c916a762e2892e883
+

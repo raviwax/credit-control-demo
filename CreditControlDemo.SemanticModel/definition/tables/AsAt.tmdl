@@ -1,0 +1,46 @@
+table AsAt
+	lineageTag: ba085fcd-60a6-45b8-a474-a0b1368aca1c
+
+	column Date
+		formatString: dd MMM yyyy
+		lineageTag: 7a94eba0-4c5c-48f9-b7cc-9814e693992d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Year Month'
+		lineageTag: 5eb479ae-5f8c-46e0-a8b1-a5dcc63757d3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year Month]
+		sortByColumn: YearMonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthKey
+		isHidden
+		formatString: 0
+		lineageTag: a964d609-3ea4-4c29-b953-c4082142b2e7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonthKey]
+
+		annotation SummarizationSetBy = User
+
+	partition AsAt = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS (
+				    'Date',
+				    "Date", 'Date'[Date],
+				    "Year Month", 'Date'[Year Month],
+				    "YearMonthKey", 'Date'[YearMonthKey]
+				)
+
+	annotation PBI_Id = f91ce17ef7b64f05b9919d2438c6fbec
+
