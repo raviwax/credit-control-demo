@@ -13,7 +13,13 @@ semantic model) on a synthetic sales ledger produced by the Python generator in 
 
 ## Model
 
-Star schema, Import mode. Arrows show filter direction.
+Star schema, Import mode. Customers, Invoices and Allocations load over the web straight from the
+raw CSVs committed in this repository, so a fresh clone opens and refreshes with nothing to set up.
+The `BaseUrl` parameter holds the folder they are read from and is the single place to repoint the
+model at a different branch or a fork. See [model/model-notes.md](model/model-notes.md) for the
+source of each table, the credentials to pick, and how to load from local files instead.
+
+Arrows show filter direction.
 
 ```mermaid
 flowchart LR
@@ -86,14 +92,24 @@ RETURN
 | `CreditControlDemo.pbip` | Power BI Project entry point |
 | `CreditControlDemo.SemanticModel/` | TMDL semantic model: tables, relationships, measures |
 | `CreditControlDemo.Report/` | Report definition: Credit Control, Customer (drillthrough) and About pages |
+| `model/` | `model-notes.md`: where each table loads from, the `BaseUrl` parameter, credentials and refresh |
 
 ## How to run
 
 1. Optional, to regenerate the data: `pip install -r data-generator/requirements.txt`, then
    `python data-generator/generate.py`. Output is identical on every run and the script prints its sanity checks.
-2. Open `CreditControlDemo.pbip` in Power BI Desktop.
-3. Transform data → Edit parameters → set `DataFolder` to the full path of this repository's `data` folder → Refresh.
+2. Open `CreditControlDemo.pbip` in Power BI Desktop and Refresh. There are no paths to set: the
+   tables read the CSVs from this repository over the web. If prompted for credentials, choose
+   **Anonymous** — the repository is public, so the raw URLs need no token.
+3. To point the model at a branch or a fork instead: Transform data → Edit parameters → change
+   `BaseUrl` → Refresh. Every table follows it.
 4. Reconcile: the TOTAL rows in `data/expected_ageing.csv` match the report as at 31 Aug 2026 and 31 Mar 2026.
+
+## Publishing
+
+Because the data comes over the public internet rather than off a workstation, no gateway is needed
+to refresh in the Power BI Service. Publish the model, set the dataset's credentials to Anonymous
+once, and scheduled refresh picks up whatever is committed on the branch in `BaseUrl`.
 
 ## Next steps
 

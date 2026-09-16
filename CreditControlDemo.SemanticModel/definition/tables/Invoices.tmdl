@@ -62,7 +62,7 @@ table Invoices
 		source =
 				let
 				    Source = Csv.Document(
-				        File.Contents(Text.TrimEnd(DataFolder, "\") & "\invoices.csv"),
+				        Web.Contents(BaseUrl, [RelativePath = "invoices.csv"]),
 				        [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
 				    ),
 				    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
