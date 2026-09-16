@@ -9,9 +9,9 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop","TMDL-Extension"]
 
-annotation PBI_QueryOrder = ["DataFolder","Customers","Invoices","Allocations"]
+annotation PBI_QueryOrder = ["BaseUrl","Customers","Invoices","Allocations"]
 
 ref table Customers
 ref table Invoices
